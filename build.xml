@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="KobeePackageApp" default="build" basedir=".">
+
+    <!-- Kobee automatically passes ${source} and ${target} to this script -->
+
+    <target name="init">
+        <echo message="Kobee Source Dir: ${source}" />
+        <echo message="Kobee Target Dir: ${target}" />
+        <!-- Create a temporary folder to hold the compiled .class files -->
+        <mkdir dir="${source}/classes"/>
+    </target>
+
+    <target name="compile" depends="init">
+        <echo message="Compiling the selected Java files..."/>
+        <!-- Compile only the files that Kobee downloaded into the source folder -->
+        <javac srcdir="${source}/src" destdir="${source}/classes" includeantruntime="false"/>
+    </target>
+
+    <target name="build" depends="compile">
+        <echo message="Packaging into a JAR file..."/>
+        <!-- Create the executable JAR and put it directly in the Kobee Target folder -->
+        <jar destfile="${target}/KobeeDemoApp.jar" basedir="${source}/classes">
+            <manifest>
+                <attribute name="Main-Class" value="com.kobee.demo.Main"/>
+            </manifest>
+        </jar>
+        <echo message="Success! The JAR file is in the target folder ready for Kobee to archive."/>
+    </target>
+
+</project>
