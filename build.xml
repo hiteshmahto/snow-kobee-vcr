@@ -7,6 +7,7 @@
         <echo message="Kobee Source Dir: ${source}" />
         <echo message="Kobee Target Dir: ${target}" />
         <!-- Create a temporary folder to hold the compiled .class files -->
+        <!-- hey -->
         <mkdir dir="${source}/classes"/>
     </target>
 
