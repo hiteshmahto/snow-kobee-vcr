@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="KobeePackageApp" default="build" basedir=".">
 
-    <!-- Kobee automatically passes ${source} and ${target} to this script ..... -->
+    <!-- Kobee automatically passes ${source} and ${target} to this script demo ..... -->
 
     <target name="init">
         <echo message="Kobee Source Dir: ${source}" />
